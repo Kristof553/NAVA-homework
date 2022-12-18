@@ -1,4 +1,4 @@
 package com.nava.service;
 
-public class PictureService {
+public interface PictureService {
 }
