@@ -13,18 +13,16 @@ import javax.persistence.Id;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Picture {
+public class ViewCounter {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String name;
-    private String creator;
+    private int pictureId;
 
-    public Picture(int id, String name, String creator) {
-        this.id = id;
-        this.name = name;
-        this.creator = creator;
+    private int views;
+
+    public ViewCounter(int pictureId, int views) {
+        this.pictureId = pictureId;
+        this.views = views;
     }
-
 }
