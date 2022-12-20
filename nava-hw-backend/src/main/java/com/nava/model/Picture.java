@@ -17,12 +17,12 @@ public class Picture {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long picture_id;
     private String name;
     private String creator;
 
-    public Picture(int id, String name, String creator) {
-        this.id = id;
+    public Picture(Long id, String name, String creator) {
+        this.picture_id = id;
         this.name = name;
         this.creator = creator;
     }

@@ -26,8 +26,15 @@ public class PictureService {
         pictureRepository.save(picture);
     }
 
-    public void deletePicture(int id) {
-        Picture picture = pictureRepository.findById((long) id).get();
+    public void deletePicture(Long id) {
+        Picture picture = pictureRepository.findById(id).get();
         pictureRepository.delete(picture);
+    }
+
+    public void upgradePictureDetails(Long id, Picture picture) {
+        Picture oldPicture = pictureRepository.findById(id).get();
+        oldPicture.setCreator(picture.getCreator());
+        oldPicture.setName(picture.getName());
+        pictureRepository.save(oldPicture);
     }
 }

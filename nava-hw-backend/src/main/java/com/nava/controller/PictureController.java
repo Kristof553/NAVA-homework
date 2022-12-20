@@ -31,8 +31,12 @@ public class PictureController {
     }
 
     @DeleteMapping(value = "{id}")
-    private void deletePicture(@PathVariable int id){
+    private void deletePicture(@PathVariable Long id){
         pictureService.deletePicture(id);
+    }
+    @PutMapping(value = "{id}")
+    private void upgradePictureDetails(@PathVariable Long id, @RequestBody Picture picture){
+        pictureService.upgradePictureDetails(id, picture);
     }
 
 }
