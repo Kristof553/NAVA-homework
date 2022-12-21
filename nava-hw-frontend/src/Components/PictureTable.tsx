@@ -1,4 +1,5 @@
 import React, {ChangeEvent, FC, useEffect, useState} from 'react';
+import TableElement from "./TableElement";
 
 const PictureTable: FC = () => {
 
@@ -6,32 +7,31 @@ const PictureTable: FC = () => {
 
     const [pictures, setPictures] = useState([])
 
+
     const getPictures = async () => {
         let data = await fetch(BASE_API_ENDPOINT)
         return await data.json()
     }
+
 
     useEffect(() => {
         getPictures()
             .then(res => setPictures(res));
     }, [])
 
+    const allPictures = pictures === undefined ? "loading..." : <TableElement picture={pictures}/>
+
     return (
         <div>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Creator</th>
-                </tr>
-                <tr>
-                    {pictures.map(({id, name}: any) => {
-                        return <td key={id}>{name}</td>
-                    })}
-                    {pictures.map(({id, creator}: any) => {
-                        return <td key={id}>{creator}</td>
-                    })}
-                </tr>
-
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Creator</th>
+                        <th>Views</th>
+                    </tr>
+                </thead>
+                {allPictures}
             </table>
 
         </div>
