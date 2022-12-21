@@ -1,6 +1,7 @@
 package com.nava.controller;
 
 import com.nava.model.Picture;
+import com.nava.model.ViewCounter;
 import com.nava.service.PictureService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +26,16 @@ public class PictureController {
         return pictureService.getAllPictures();
     }
 
+    @GetMapping("/views/{picture_id}")
+    private int getViewsFromPicture(@PathVariable Long picture_id){
+        return pictureService.getViewsFromPicture(picture_id);
+    }
+
     @PostMapping
     private void addPicture(@RequestBody Picture picture){
+        ViewCounter viewCounter = new ViewCounter(picture, 0);
         pictureService.addPicture(picture);
+        pictureService.addViews(viewCounter);
     }
 
     @DeleteMapping(value = "{id}")
