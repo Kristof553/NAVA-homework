@@ -16,11 +16,19 @@ const PictureData = ({picture_id,name, creator}: Picture) =>{
             .then(res => setViews(res));
     }, [])
 
+    const deletePicture = async () =>{
+        await fetch(`/picture/${picture_id}`, {
+            method: 'DELETE',
+        })
+        window.location.reload()
+    }
+
     return(
         <tr>
             <td>{name}</td>
             <td>{creator}</td>
             <td>{views}</td>
+            <td><button onClick={deletePicture}>Delete</button></td>
         </tr>
 
 

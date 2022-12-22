@@ -8,15 +8,14 @@ const AddPicture = () => {
     const [creator, setCreator] = useState([])
 
     const postFetch = async (payload: any) => {
-        const data = await fetch(`/picture`, {
+        await fetch(`/picture`, {
             method: 'POST',
             headers:{
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(payload)
-        })
-
+        });
     }
 
     const addPicture = (e: any) => {
