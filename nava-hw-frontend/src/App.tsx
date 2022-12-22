@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import PictureTable from "./Components/PictureTable";
+import PictureTable from "./Components/Table/PictureTable";
 
 const App: FC = () => {
 
