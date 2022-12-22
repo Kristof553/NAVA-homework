@@ -1,14 +1,23 @@
-import {Picture} from "./PictureProp";
+import { Picture} from "../../Props";
 import PictureData from "./PictureData";
 
-interface Props{
+interface ElementProps{
     picture: Picture[]
+    setName:(name:string) => void
+    setCreator:(name:string) => void
+    setPictureId:(picture_is:number) => void
 }
 
-const TableElement = ({picture}: Props) =>{
+const TableElement = (element: ElementProps ) =>{
 
-    const allPictures = picture.map((picture) =>
-        <PictureData name={picture.name} creator={picture.creator} picture_id={picture.picture_id}/>)
+
+    const allPictures = element.picture.map((picture) =>
+        <PictureData
+            picture={picture}
+            setPictureId={element.setPictureId}
+            setCreator={element.setCreator}
+            setName={element.setName}
+        />)
 
     return(
         <tbody>

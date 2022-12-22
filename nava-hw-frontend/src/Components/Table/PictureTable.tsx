@@ -1,25 +1,28 @@
 import React, { FC, useEffect, useState} from 'react';
 import TableElement from "./TableElement";
+import {getFetch} from "../../Util";
+import {Picture} from "../../Props";
 
-const PictureTable: FC = () => {
+interface TableProps{
+    picture:Picture[]
+    setPictures:(picture: Picture[]) => void
+    setName:(name:string) => void
+    setCreator:(name:string) => void
+    setPictureId:(picture_is:number) => void
+}
 
-    const BASE_API_ENDPOINT = "/picture";
-
-    const [pictures, setPictures] = useState([])
-
-
-    const getPictures = async () => {
-        let data = await fetch(BASE_API_ENDPOINT)
-        return await data.json()
-    }
-
+const PictureTable = (pictures:TableProps) => {
 
     useEffect(() => {
-        getPictures()
-            .then(res => setPictures(res));
+        getFetch(`/picture`)
+            .then(res => pictures.setPictures(res));
     }, [])
 
-    const allPictures = pictures === undefined ? "loading..." : <TableElement picture={pictures}/>
+    const allPictures = pictures === undefined ? "loading..." : <TableElement
+        picture={pictures.picture}
+        setPictureId={pictures.setPictureId}
+        setName={pictures.setName}
+        setCreator={pictures.setCreator}/>
 
     return (
         <div>

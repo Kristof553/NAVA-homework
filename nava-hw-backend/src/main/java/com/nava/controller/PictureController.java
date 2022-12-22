@@ -47,4 +47,9 @@ public class PictureController {
         pictureService.upgradePictureDetails(id, picture);
     }
 
+    @PutMapping(value = "/increase_view/{id}")
+    private void increaseView(@PathVariable Long id){
+        pictureService.increaseView(id);
+    }
+
 }

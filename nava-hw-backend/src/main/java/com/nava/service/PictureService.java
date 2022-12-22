@@ -57,4 +57,11 @@ public class PictureService {
         ViewCounter viewCounter = viewCounterRepository.findById(picture_id).get();
         return viewCounter.getViews();
     }
+
+    public void increaseView(Long picture_id) {
+        ViewCounter viewCounter = viewCounterRepository.findById(picture_id).get();
+        int views = viewCounter.getViews();
+        viewCounter.setViews(views + 1);
+        viewCounterRepository.save(viewCounter);
+    }
 }
