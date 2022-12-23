@@ -1,5 +1,5 @@
 import React from "react";
-import {editPictureFetch, postFetch} from "../../Fetch";
+import {editPictureFetch, postFetch} from "../../Util/Fetch";
 
 interface Props{
     name:string

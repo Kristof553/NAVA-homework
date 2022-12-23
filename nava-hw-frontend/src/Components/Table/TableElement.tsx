@@ -1,4 +1,4 @@
-import { Picture} from "../../Props";
+import { Picture} from "../../Util/Props";
 import PictureData from "./PictureData";
 
 interface ElementProps{

@@ -26,6 +26,11 @@ public class PictureController {
         return pictureService.getAllPictures();
     }
 
+    @GetMapping("{picture_id}")
+    private Picture getOnePicture(@PathVariable Long picture_id){
+        return pictureService.getOnePicture(picture_id);
+    }
+
     @GetMapping("/views/{picture_id}")
     private int getViewsFromPicture(@PathVariable Long picture_id){
         return pictureService.getViewsFromPicture(picture_id);

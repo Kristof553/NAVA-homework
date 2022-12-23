@@ -1,6 +1,7 @@
-import {Picture} from "../../Props";
+import {Picture} from "../../Util/Props";
 import {useEffect, useState} from "react";
-import {deletePicture, getFetch, increaseViews} from "../../Fetch";
+import {deletePicture, getFetch, increaseViews} from "../../Util/Fetch";
+import { Link } from "react-router-dom";
 
 interface DataProps{
     picture:Picture
@@ -27,6 +28,10 @@ const PictureData = (element: DataProps) =>{
     }
 
 
+
+
+
+
     return(
         <tr>
             <td>{element.picture.name}</td>
@@ -34,7 +39,7 @@ const PictureData = (element: DataProps) =>{
             <td>{views}</td>
             <td><button onClick={() => deletePicture(`/picture/${pictureId}`)}>Delete</button></td>
             <td><button onClick={() => edit()}>Edit</button></td>
-            <td><button onClick={() => increaseViews(`/picture/increase_view/${pictureId}`)}>Inspect</button></td>
+            <td><Link to={`/inspect-picture/${pictureId}`}>Inspect</Link></td>
         </tr>
 
 

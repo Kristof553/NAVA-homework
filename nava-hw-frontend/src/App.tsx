@@ -1,7 +1,9 @@
 import React, {FC, useState} from 'react';
 import Form from "./Components/Form/Form";
+import {Picture} from "./Util/Props";
 import PictureTable from "./Components/Table/PictureTable";
-import {Picture} from "./Props";
+
+
 
 const App: FC = () => {
 
