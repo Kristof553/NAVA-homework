@@ -1,19 +1,26 @@
 import React from "react";
-import {postFetch} from "../../Util";
+import {editPictureFetch, postFetch} from "../../Fetch";
 
 interface Props{
     name:string
     creator:string
     setName:(name: string) => void
     setCreator:(creator: string) => void
+    picture_id:number
 }
 
-const Form = ({name, creator, setName, setCreator}:Props) => {
+const Form = ({name, creator, setName, setCreator, picture_id}:Props) => {
 
 
     const addPicture = (e: any) => {
         e.preventDefault()
         postFetch({name, creator}).then(r => console.log(r))
+        window.location.reload()
+    }
+
+    const editPicture = (e: any) =>{
+        e.preventDefault()
+        editPictureFetch(`/picture/${picture_id}`, {name, creator}).then(r => console.log(r))
         window.location.reload()
     }
 
@@ -46,7 +53,7 @@ const Form = ({name, creator, setName, setCreator}:Props) => {
                 <input
                     type={"submit"}
                     value={"Add picture"}/>
-                <button>Edit</button>
+                <button onClick={editPicture}>Edit</button>
             </form>
         </div>
     )

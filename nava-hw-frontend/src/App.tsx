@@ -18,7 +18,9 @@ const App: FC = () => {
             <Form name={name}
                   setName={setName}
                   creator={creator}
-                  setCreator={setCreator}/>
+                  setCreator={setCreator}
+                  picture_id={picture_id}
+            />
             <PictureTable
                 picture={pictures}
                 setPictures={setPictures}

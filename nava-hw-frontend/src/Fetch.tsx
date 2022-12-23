@@ -27,3 +27,14 @@ export const increaseViews = async (url: string) =>{
     })
     window.location.reload()
 }
+
+export const editPictureFetch= async (url: string, payload: any) =>{
+    await fetch(url, {
+        method: `PUT`,
+        headers:{
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    })
+}

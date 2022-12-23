@@ -41,7 +41,7 @@ public class PictureService {
 
     public void upgradePictureDetails(Long id, Picture picture) {
         Picture oldPicture = pictureRepository.findById(id).get();
-        ViewCounter viewCounter = viewCounterRepository.findById(picture.getPicture_id()).get();
+        ViewCounter viewCounter = viewCounterRepository.findById(oldPicture.getPicture_id()).get();
         viewCounter.setViews(0);
         oldPicture.setCreator(picture.getCreator());
         oldPicture.setName(picture.getName());

@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState} from 'react';
 import TableElement from "./TableElement";
-import {getFetch} from "../../Util";
+import {getFetch} from "../../Fetch";
 import {Picture} from "../../Props";
 
 interface TableProps{

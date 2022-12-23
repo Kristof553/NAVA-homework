@@ -1,6 +1,6 @@
 import {Picture} from "../../Props";
 import {useEffect, useState} from "react";
-import {deletePicture, getFetch, increaseViews} from "../../Util";
+import {deletePicture, getFetch, increaseViews} from "../../Fetch";
 
 interface DataProps{
     picture:Picture
