@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Picture from "./Components/Picture";
+import InspectPicture from "./Components/InspectPicture";
 
 
 const root = ReactDOM.createRoot(
@@ -12,7 +12,7 @@ root.render(
   <BrowserRouter>
       <Routes>
           <Route path={"/"} element={<App/>}/>
-          <Route path={`/inspect-picture/:picture_id`} element={<Picture/>}/>
+          <Route path={`/inspect-picture/:picture_id`} element={<InspectPicture/>}/>
       </Routes>
   </BrowserRouter>
 );
