@@ -33,18 +33,12 @@ const Form = ({name, creator, setName, setCreator, picture_id}:Props) => {
     }
 
     return(
-        <div>
+        <div className="form-container">
             <form onSubmit={addPicture}>
-                <label>
-                    Name
-                </label>
                 <input type={"text"}
                        placeholder={"Picture name"}
                        value={name} name={"picture_name"}
                        onChange={handleNameChange}/>
-                <label>
-                    Creator
-                </label>
                 <input
                     type={"text"}
                     placeholder={"Creator name"}
@@ -52,8 +46,9 @@ const Form = ({name, creator, setName, setCreator, picture_id}:Props) => {
                     onChange={handleCreatorChange}/>
                 <input
                     type={"submit"}
-                    value={"Add picture"}/>
-                <button onClick={editPicture}>Edit</button>
+                    value={"Add picture"}
+                    className="form-button"/>
+                <button onClick={editPicture} className="form-button">Edit</button>
             </form>
         </div>
     )

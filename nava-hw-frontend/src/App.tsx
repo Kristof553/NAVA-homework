@@ -2,7 +2,7 @@ import React, {FC, useState} from 'react';
 import Form from "./Components/Form/Form";
 import {Picture} from "./Util/Props";
 import PictureTable from "./Components/Table/PictureTable";
-
+import "./stylesheet/Application.css"
 
 
 const App: FC = () => {
@@ -16,13 +16,12 @@ const App: FC = () => {
     const [pictures, setPictures] = useState<Picture[]>([])
 
     return (
-        <div>
+        <div className="background">
             <Form name={name}
                   setName={setName}
                   creator={creator}
                   setCreator={setCreator}
-                  picture_id={picture_id}
-            />
+                  picture_id={picture_id}/>
             <PictureTable
                 picture={pictures}
                 setPictures={setPictures}
@@ -31,7 +30,7 @@ const App: FC = () => {
                 setName={setName}/>
         </div>
 
-  );
+    );
 }
 
 export default App;

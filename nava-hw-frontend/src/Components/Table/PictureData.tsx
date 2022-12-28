@@ -33,13 +33,13 @@ const PictureData = (element: DataProps) =>{
 
 
     return(
-        <tr>
-            <td>{element.picture.name}</td>
-            <td>{element.picture.creator}</td>
-            <td>{views}</td>
-            <td><button onClick={() => deletePicture(`/picture/${pictureId}`)}>Delete</button></td>
-            <td><button onClick={() => edit()}>Edit</button></td>
-            <td><a onClick={() => handleViewCount()} href={`/inspect-picture/${pictureId}`}>Inspect</a></td>
+        <tr className="table-row">
+            <td className="table-data" width={20}>{element.picture.name}</td>
+            <td className="table-data" width={20}>{element.picture.creator}</td>
+            <td className="table-data" width={20}>{views}</td>
+            <td className="table-data" width={20}><button onClick={() => deletePicture(`/picture/${pictureId}`)} className="button">Delete</button></td>
+            <td className="table-data" width={20}><button onClick={() => edit()} className="button">Edit</button></td>
+            <td className="table-data" width={20}><button className="button"><a onClick={() => handleViewCount()} href={`/inspect-picture/${pictureId}`} style={{ textDecoration: 'none', color: 'black' }}>Inspect</a></button></td>
         </tr>
 
 

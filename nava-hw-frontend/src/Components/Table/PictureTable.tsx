@@ -22,16 +22,20 @@ const PictureTable = (pictures:TableProps) => {
         picture={pictures.picture}
         setPictureId={pictures.setPictureId}
         setName={pictures.setName}
-        setCreator={pictures.setCreator}/>
+        setCreator={pictures.setCreator}
+        />
 
     return (
-        <div>
-            <table>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Creator</th>
-                    <th>Views</th>
+        <div className="table-container">
+            <table className="table">
+                <thead className="table-header">
+                <tr className="table-row-header">
+                    <th className="header__item">Name</th>
+                    <th className="header__item">Creator</th>
+                    <th className="header__item">Views</th>
+                    <th className="header__item">Delete picture</th>
+                    <th className="header__item">Edit picture</th>
+                    <th className="header__item">Inspect picture</th>
                 </tr>
                 </thead>
                 {allPictures}

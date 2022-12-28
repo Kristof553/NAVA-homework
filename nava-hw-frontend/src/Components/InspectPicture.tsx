@@ -16,7 +16,7 @@ const InspectPicture = () => {
 
 
     return(
-        <div>
+        <div className="picture-data">
             <h1>{pictureData?.name}</h1>
             <h1>{pictureData?.creator}</h1>
         </div>
