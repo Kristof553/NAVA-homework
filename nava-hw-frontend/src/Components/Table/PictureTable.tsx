@@ -1,15 +1,8 @@
-import React, { FC, useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import TableElement from "./TableElement";
 import {getFetch} from "../../Util/Fetch";
-import {Picture} from "../../Util/Props";
+import {TableProps} from "../../Util/Props";
 
-interface TableProps{
-    picture:Picture[]
-    setPictures:(picture: Picture[]) => void
-    setName:(name:string) => void
-    setCreator:(name:string) => void
-    setPictureId:(picture_is:number) => void
-}
 
 const PictureTable = (pictures:TableProps) => {
 
@@ -22,8 +15,7 @@ const PictureTable = (pictures:TableProps) => {
         picture={pictures.picture}
         setPictureId={pictures.setPictureId}
         setName={pictures.setName}
-        setCreator={pictures.setCreator}
-        />
+        setCreator={pictures.setCreator}/>
 
     return (
         <div className="table-container">
@@ -43,7 +35,6 @@ const PictureTable = (pictures:TableProps) => {
 
         </div>
     );
-
 }
 
 export default PictureTable

@@ -14,14 +14,14 @@ export const getFetch = async (url: string) => {
     return await data.json()
 }
 
-export const deletePicture = async (url: string) =>{
+export const deleteFetch = async (url: string) =>{
     await fetch(url, {
         method: 'DELETE',
     })
     window.location.reload()
 }
 
-export const increaseViews = async (url: string) =>{
+export const increaseViewsFetch = async (url: string) =>{
     await fetch(url, {
         method: 'PUT'
     })

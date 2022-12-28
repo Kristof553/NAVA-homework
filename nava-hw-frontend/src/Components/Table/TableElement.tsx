@@ -1,18 +1,11 @@
-import { Picture} from "../../Util/Props";
+import {ElementProps} from "../../Util/Props";
 import PictureData from "./PictureData";
-
-interface ElementProps{
-    picture: Picture[]
-    setName:(name:string) => void
-    setCreator:(name:string) => void
-    setPictureId:(picture_is:number) => void
-}
 
 const TableElement = (element: ElementProps ) =>{
 
-
     const allPictures = element.picture.map((picture) =>
         <PictureData
+            key={picture.picture_id}
             picture={picture}
             setPictureId={element.setPictureId}
             setCreator={element.setCreator}
@@ -23,8 +16,6 @@ const TableElement = (element: ElementProps ) =>{
         <tbody>
             {allPictures}
         </tbody>
-
-
     )
 }
 
