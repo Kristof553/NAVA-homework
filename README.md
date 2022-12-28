@@ -4,7 +4,7 @@ A web applikáció fotókról kapott adatok statisztikai megjelenítésére szol
 
 ##Felépítés
 
-A weblap CRUD műveletek elvégzésére alkalmas egy REST API segítségével. A fronted és a backend külön mappában található. A frontednhez React-ot es Typescriptet használtam. A frontend létrehozást is React végzi. A backend Java (Spring Boot) alapú az adatbáziskezelést pedig JPA végzi. Az sqldump fájlt tartalmazza a projekt. 
+A weblap CRUD műveletek elvégzésére alkalmas egy REST API segítségével. A fronted és a backend külön mappában található. A frontednhez React-ot es Typescriptet használtam. A frontend létrehozást is React végzi. A backend Java (Spring Boot) alapú az adatbáziskezelést pedig JPA végzi. Az sqldump fájlt tartalmazza a projekt navahw.sql néven.
 
 ##Jellemzők
 -Képek adatainak megjelenítése táblázatban
